@@ -24,13 +24,8 @@ So TypeScript stops checking it.
 ### Example:
 
 ```ts
-let data: any;
-
-data = "Hello";
-data.toUpperCase(); // this will not give any error or warning while developing
-
-data = 10;
-data.toUpperCase(); //  Runtime error (crash!)
+const data: any = 50;
+data.toUpperCase(); // This code will not give any error. There will be Runtime error. 
 
 ```
 ## What is unknown and why it is safer?
@@ -38,9 +33,7 @@ data.toUpperCase(); //  Runtime error (crash!)
 * “I don’t know the type yet but Typescript does not let you use it directly”
 
 ```ts
-let data2: unknown;
-data2 = "Hello";
-
+const data2: unknown = "Hello";
 data2.toUpperCase();  //Error before runtime
 ```
 
@@ -48,9 +41,7 @@ data2.toUpperCase();  //Error before runtime
 * We check the type before using it
 
 ```ts
-let test: unknown;
-
-data = "Hello";
+const test: unknown = "Hello"
 
 if (typeof test === "string") {
   console.log(test.toUpperCase()); 
